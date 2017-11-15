@@ -1,0 +1,73 @@
+<div class="body">
+  <div class="title-container">
+    <h1>Your Task Now...</h1>
+  </div>
+
+  <!--   Task Container   -->
+  <section class="tasks-container">
+
+    <!--   Each Tasks   -->
+    <% @tasks.each do |task| %>
+      <% if task.weight < 30 then %>
+        <div class="task1">
+          <div class="task-name">
+            <%= task.name %>
+          </div>
+          <div class="task-text">
+            <%= task.text %>
+          </div>
+          <div class="task-btn-container">
+            <%= button_to 'Done!', "/tasks/complete/#{task.id}", {class: 'done-btn', method: :patch} %>
+            <form class="button_to" method="post"><input class="edit-btn" type="button" value="Edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" /><input type="hidden" name="authenticity_token" value="3qo1sMALvl8eM5JRyUr8ukHO5+K94LcphfI5Q6M1kj1+zkrANbKSqwEFnr0cxKeGXMXyjlLQsz3V6hiZuutpZQ==" /></form>
+            <%= button_to 'Delete', "/tasks/delete/#{task.id}", {class: 'delete-btn', method: :delete} %>
+          </div>
+        </div>
+      <% elsif task.weight < 60 %>
+      <div class="task2">
+        <div class="task-name">
+          <%= task.name %>
+        </div>
+        <div class="task-text">
+          <%= task.text %>
+        </div>
+        <div class="task-btn-container">
+          <%= button_to 'Done!', "/tasks/complete/#{task.id}", {class: 'done-btn', method: :patch} %>
+          <form class="button_to" method="post"><input class="edit-btn" type="button" value="Edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" /><input type="hidden" name="authenticity_token" value="3qo1sMALvl8eM5JRyUr8ukHO5+K94LcphfI5Q6M1kj1+zkrANbKSqwEFnr0cxKeGXMXyjlLQsz3V6hiZuutpZQ==" /></form>
+          <%= button_to 'Delete', "/tasks/delete/#{task.id}", {class: 'delete-btn', method: :delete} %>
+        </div>
+      </div>
+      <% elsif task.weight < 80  %>
+      <div class="task3">
+        <div class="task-name">
+          <%= task.name %>
+        </div>
+        <div class="task-text">
+          <%= task.text %>
+        </div>
+        <div class="task-btn-container">
+          <%= button_to 'Done!', "/tasks/complete/#{task.id}", {class: 'done-btn', method: :patch} %>
+          <form class="button_to" method="post"><input class="edit-btn" type="button" value="Edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" /><input type="hidden" name="authenticity_token" value="3qo1sMALvl8eM5JRyUr8ukHO5+K94LcphfI5Q6M1kj1+zkrANbKSqwEFnr0cxKeGXMXyjlLQsz3V6hiZuutpZQ==" /></form>
+          <%= button_to 'Delete', "/tasks/delete/#{task.id}", {class: 'delete-btn', method: :delete} %>
+        </div>
+      </div>
+      <% else %>
+      <div class="task4">
+        <div class="task-name">
+          <%= task.name %>
+        </div>
+        <div class="task-text">
+          <%= task.text %>
+        </div>
+        <div class="task-btn-container">
+          <%= button_to 'Done!', "/tasks/complete/#{task.id}", {class: 'done-btn', method: :patch} %>
+          <form class="button_to" method="post"><input class="edit-btn" type="button" value="Edit" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" /><input type="hidden" name="authenticity_token" value="3qo1sMALvl8eM5JRyUr8ukHO5+K94LcphfI5Q6M1kj1+zkrANbKSqwEFnr0cxKeGXMXyjlLQsz3V6hiZuutpZQ==" /></form>
+          <%= button_to 'Delete', "/tasks/delete/#{task.id}", {class: 'delete-btn', method: :delete} %>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+    <!--   Each Task End   -->
+
+  </section>
+</div>
+<!--   Task Container End   -->

@@ -1,0 +1,124 @@
+.whole-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// !---   Header Start   ---!
+header {
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.tasks-btn {
+  background: #eee;
+  border-radius: 5px;
+  color: #000;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.tasks-btn:hover {
+  background: #00a5fc;
+  color: #fff;
+}
+
+.logout-btn {
+  background: #eee;
+  border-radius: 5px;
+  color: #000;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.logout-btn:hover {
+  background: #f0362e;
+  color: #fff;
+}
+// !---   Header End   ---!
+
+// !---   Main Content End   ---!
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+// !---   Navigation Start   ---!
+nav {
+  background: #000;
+  border-top: 2px solid;
+  border-top-color: #333;
+  width: 200px;
+  height: 1000px;
+}
+
+.nav-title {
+  color: #fff;
+  width: 100%;
+  margin-left: 10px;
+}
+
+ul {
+}
+
+li {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  padding-left: 20px;
+}
+
+li:hover {
+  background: #666;
+  color: #f0362e;
+}
+// !---   Navigation End   ---!
+
+// !---   Modal Window Start   ---!
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-register {
+  margin-bottom: 20px;
+  width: 90%;
+  height: 40px;
+}
+
+.btn-cancel {
+  width: 90%;
+  height: 40px;
+}
+// !---   Modal Window End   ---!
+
+// !---   Main Content End   ---!

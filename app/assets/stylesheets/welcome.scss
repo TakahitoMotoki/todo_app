@@ -1,0 +1,99 @@
+.my-container {
+  background-image: url("/assets/background.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.my-title-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.my-title{
+  font-family: fantasy;
+  font-size: 60px;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  background: #ddd;
+}
+
+.slider-image-container {
+  width: 800px;
+  height: 480px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.slider-image {
+}
+
+.slider-sets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#slider-prev-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+}
+
+#slider-next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+}
+
+.my-container {
+  border: solid #000 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-btn-container {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 40%;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button_to {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}

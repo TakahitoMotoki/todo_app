@@ -1,0 +1,127 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.tasks-container {
+  background: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.task1 {
+  border-radius: 8px;
+  background: #00c50d;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.task2 {
+  border-radius: 8px;
+  background: #05b9ff;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.task3 {
+  border-radius: 8px;
+  background: #ffd22c;
+  color: #f00;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.task4 {
+  border-radius: 8px;
+  background: #e4010c;
+  color: #000;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.task-name {
+  width: 25%;
+  margin-left: 10px;
+}
+
+.task-text {
+  color: #000;
+  font-size: 15px;
+  width: 50%;
+  margin-left: 15px;
+}
+
+.task-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.done-btn {
+  font-size: 15px;
+  height: 22px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.edit-btn {
+  font-size: 15px;
+  height: 22px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.delete-btn {
+  font-size: 15px;
+  height: 22px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+// !---   Edit Rails Class Start   ---!
+// !---   Edit Rails Class End   ---!

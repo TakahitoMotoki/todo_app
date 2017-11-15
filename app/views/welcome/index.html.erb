@@ -1,0 +1,68 @@
+<!--   Header Start   -->
+  <script>
+$(function() {
+  var image_number = 0;
+  var img_array = ['/assets/DragonQuest5.jpg', '/assets/DragonQuest7.jpg', '/assets/dragonquest_test.jpg'];
+
+  //画像を先に進める関数
+  $(' #slider-next-btn ').on('click', function() {
+    image_number = image_number + 1;
+    if(image_number > 2) {
+      image_number = 0;
+    }
+    changeImage(image_number);
+  });
+
+  //画像を前に戻す関数
+  $(' #slider-prev-btn ').on('click', function() {
+    image_number = image_number - 1;
+    if(image_number < 0) {
+      image_number = 2;
+    }
+    changeImage(image_number);
+  });
+
+  //画像を変える関数
+  function changeImage(number) {
+    img = document.getElementsByClassName("slider-image");
+    img[0].src = img_array[number];
+  }
+});
+</script>
+<!--   Header End   -->
+
+<!--   Body Start   -->
+<div class="my-container">
+  <!--   Title Start   -->
+  <section class="my-title-container">
+    <h1 class="my-title"><b>Task Digestion</b></h1>
+    <h3><b>日々の「嫌なこと」をより「楽しく」</b></h3>
+  </section>
+  <!--   Title End   -->
+
+  <!--   PhotoSlide Start   -->
+  <div class="slider-container">
+    <div class="slider-image-container">
+      <%= image_tag('DragonQuest5.jpg', class: "slider-image", height: "480", width: "800") %>
+    </div>
+    <div class="slider-sets">
+      <button id="slider-prev-btn" type="button"> < </button>
+      <div id="slider-pagenation">
+      </div>
+      <button id="slider-next-btn" type="button"> > </button>
+    </div>
+  </div>
+  <!--   PhotoSlide End   -->
+
+  <div class="my-btn-container">
+    <%= button_to 'Sign In', '/users/sign_in', {class: 'btn btn-success btn-lg', method: :get} %>
+  </div>
+  <div class="my-btn-container">
+    <%= button_to 'Sign Up', 'users/sign_up', {class: 'btn btn-info btn-lg', method: :get} %>
+  </div>
+
+  <footer>
+    @Takahito Motoki
+  </footer>
+</div>
+<!--   Body End   -->

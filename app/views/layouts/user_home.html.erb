@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<title>TodoApp</title>
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<!--   Body Start   -->
+<div class="whole-container">
+
+  <!--   Header Start   -->
+  <header>
+    <div class="btn-container">
+      <button type="button" class="tasks-btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Tasks</button>
+      <%= button_to 'Logout', '/users/sign_out', {class: 'logout-btn', method: :delete} %>
+    </div>
+  </header>
+  <!--   Header End   -->
+
+  <!--   Main Content Start   -->
+  <div class="main-container">
+    <nav>
+      <h3 class="nav-title">
+        Main Menu
+      </h3>
+      <ul>
+        <li>Home</li>
+        <li>Setting</li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </div>
+  <!--   Main Content End   -->
+
+  <!--   Modal Window Start   -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+        </div>
+        <div class="modal-body">
+          <%= form_for "", {url: "/tasks/create/#{current_user.id}"} do |f| %>
+            <div class="form-group">
+              <%= f.label :name, {class: "form-control-label"} %><br>
+              <%= f.text_field :name, {class: "form-control", id: "recipient-name"} %>
+            </div>
+            <div class="form-group">
+              <%= f.label :text, {class: "form-control-label"} %>
+              <%= f.text_area :text, {class: "form-control", id: "message-text"} %>
+            </div>
+            <div class="form-group">
+              <%= f.label :weight, {class: "form-control-label"} %>(0 - 100)<br>
+              <%= f.number_field :weight, {class: "form-control-label", in: 0..100, step: "5"} %>
+            </div>
+            <%= f.submit class: "btn-primary btn-register" %>
+          <% end %>
+        </div>
+        <div class="modal-footer footer-container">
+          <button type="button" class="btn-secondary btn-cancel" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   Modal Window End   -->
+
+</div>
+<!--   Body End   -->
+
+<!--   Test Area Start   -->
+<!--   Test Area End   -->

@@ -1,0 +1,72 @@
+$$0. 必要なGemfileのインストール
+  $$DB:MySQL
+  $$機能:ログインが必要、Facebookとの連携
+
+$$1. 必要なコントローラーの設計
+ $$1.1. rails g controller tasks
+ $$1.2. rails g devise:install
+ $$1.3. rails g devise user
+  deviseはユーザーログインが確認された後、user_root_pathに自動的にリダイレクトする。なければ、root toに書かれているところにリダイレクトされる。
+  以下のようにconfig/routes.rbに記述することで、使い分けをすることができる。
+  authenticated :user do
+    root to: '<ログイン時に飛ばしたいパス>', as: :user_root
+  end
+ $$1.4. rails g devise:controllers user
+ $$1.5. rails g devise:views user
+ $$1.6. routes.rbにルーティングを追加
+ $$1.7. rails g controller users
+
+2. モデルの設計
+ $$2.1. rails g model tasks
+ $$2.2. マイグレーションファイルの設定
+  $$2.2.1. Taskに以下のカラムを追加
+    t.string :name
+    t.text :text
+    t.integer :weight
+    t.integer :complete
+    t.integer :user_id
+
+3. ビューファイルの編集
+ $$3.1. BootStrapをダウンロード
+  $$3.1.1. Gemfile にgem 'bootstrap-sass', gem 'sass-rails', 'jquery-rails' 'bootstrap', '~> 4.0.0.beta'を追加
+  $$3.1.2. app/assets/stylesheets/application.scss の中身を変更
+    中身を全て消し、@import 'bootstrap-sprockets', @import 'bootstrap'を追加。
+    ページごとに用意したscssを読み込むために、@import 'partial/*'もかく。しかしpartialの中身が空だとエラーになる。
+  $$3.1.3. app/assets/javascript/application.js の中身を変更
+    //= require jquery3
+    //= require popperを追加
+ 3.2. 編集開始
+  3.2.1. Users
+   3.2.1.1. /users/index.html.erb ... ホーム画面
+   3.2.1.2. /users/login.html.erb ... ログイン画面
+   3.2.1.3. /users/signup.html.erb ... 新規登録
+   3.2.1.4. /users/hoome.html.erb ... ユーザーのホーム画面
+  3.2.2. Tasks
+   3.2.2.1. 前に迫り上がる画面が欲しい(課題の登録のためにわざわざリダイレクトするのはめんどくさい)
+
+4. 本番環境へ以降
+ 4.1. テストなどの勉強(Input)
+ 4.2. サーバーを借りる
+ 4.3. サーバーの設定をする
+ 4.4. 本番環境へ以降
+
+5. 宣伝
+ 5.1. 多くの人に使ってもらえるように、できるだけ宣伝をする
+
+6. iPhoneアプリへの移行
+
+◆学んだこと◆
+・JQueryが(JSが)Rails上で動かない!!
+A.いろんな原因が考えられる。
+ 1. Turbolinks が悪さをしている
+ 2. application.jsの順番が違う
+ 3. jsを書くときは$(function(){ });で全体を囲う必要あり
+
+・レイアウトの指定方法
+A. コントローラーの中に、layout "<レイアウト名>"と書く！
+
+・画像の表示方法
+A. image_tagを用いる
+
+・buttonでページを飛ばす
+A. button_toを用いる
